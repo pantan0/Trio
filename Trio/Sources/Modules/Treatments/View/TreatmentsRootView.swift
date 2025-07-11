@@ -189,11 +189,6 @@ extension Treatments {
                 VStack {
                     List {
                         Section {
-                            ForecastChart(state: state)
-                                .padding(.vertical)
-                        }.listRowBackground(Color.chart)
-
-                        Section {
                             carbsTextField()
 
                             if state.useFPUconversion {
@@ -211,11 +206,17 @@ extension Treatments {
                                 Spacer()
                                 if !pushed {
                                     Button {
+                                        let impactSoft = UIImpactFeedbackGenerator(style: .soft)
+                                        impactSoft.impactOccurred()
                                         pushed = true
                                     } label: { Text("Now") }.buttonStyle(.borderless).foregroundColor(.secondary)
                                         .padding(.trailing, 5)
                                 } else {
-                                    Button { state.date = state.date.addingTimeInterval(-15.minutes.timeInterval) }
+                                    Button {
+                                        let impactMedium = UIImpactFeedbackGenerator(style: .medium)
+                                        impactMedium.impactOccurred()
+                                        state.date = state.date.addingTimeInterval(-15.minutes.timeInterval)
+                                    }
                                     label: { Image(systemName: "minus.circle") }.tint(.blue).buttonStyle(.borderless)
 
                                     DatePicker(
