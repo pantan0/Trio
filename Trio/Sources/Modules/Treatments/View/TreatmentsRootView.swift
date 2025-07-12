@@ -211,11 +211,17 @@ extension Treatments {
                                 Spacer()
                                 if !pushed {
                                     Button {
+                                        let impactLight = UIImpactFeedbackGenerator(style: .light)
+                                        impactLight.impactOccurred()
+
                                         pushed = true
                                     } label: { Text("Now") }.buttonStyle(.borderless).foregroundColor(.secondary)
                                         .padding(.trailing, 5)
                                 } else {
-                                    Button { state.date = state.date.addingTimeInterval(-15.minutes.timeInterval) }
+                                    Button {
+                                        let impactMedium = UIImpactFeedbackGenerator(style: .medium)
+                                        impactMedium.impactOccurred()
+                                        state.date = state.date.addingTimeInterval(-15.minutes.timeInterval) }
                                     label: { Image(systemName: "minus.circle") }.tint(.blue).buttonStyle(.borderless)
 
                                     DatePicker(
@@ -233,6 +239,8 @@ extension Treatments {
                                             }
                                         }
                                     Button {
+                                        let impactMedium = UIImpactFeedbackGenerator(style: .medium)
+                                        impactMedium.impactOccurred()
                                         state.date = state.date.addingTimeInterval(15.minutes.timeInterval)
                                     }
                                     label: { Image(systemName: "plus.circle") }.tint(.blue).buttonStyle(.borderless)
@@ -240,14 +248,7 @@ extension Treatments {
                             }
 
                             // Notes
-                            HStack {
-                                Image(systemName: "square.and.pencil")
-                                TextFieldWithToolBarString(
-                                    text: $state.note,
-                                    placeholder: String(localized: "Note..."),
-                                    maxLength: 25
-                                )
-                            }
+                           
                         }.listRowBackground(Color.chart)
 
                         Section {
