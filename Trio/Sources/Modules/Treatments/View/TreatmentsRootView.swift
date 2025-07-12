@@ -194,6 +194,15 @@ extension Treatments {
                         }.listRowBackground(Color.chart)
 
                         Section {
+                            HStack {
+                                Image(systemName: "square.and.pencil")
+                                TextFieldWithToolBarString(
+                                    text: $state.note,
+                                    placeholder: String(localized: "Note..."),
+                                    maxLength: 25
+                                )
+                            }
+                            
                             carbsTextField()
 
                             if state.useFPUconversion {
@@ -211,16 +220,16 @@ extension Treatments {
                                 Spacer()
                                 if !pushed {
                                     Button {
-                                        let impactLight = UIImpactFeedbackGenerator(style: .light)
-                                        impactLight.impactOccurred()
+                                        let impactSoft = UIImpactFeedbackGenerator(style: .soft)
+                                        impactSoft.impactOccurred()
 
                                         pushed = true
                                     } label: { Text("Now") }.buttonStyle(.borderless).foregroundColor(.secondary)
                                         .padding(.trailing, 5)
                                 } else {
                                     Button {
-                                        let impactMedium = UIImpactFeedbackGenerator(style: .medium)
-                                        impactMedium.impactOccurred()
+                                        let impactLight = UIImpactFeedbackGenerator(style: .light)
+                                        impactLight.impactOccurred()
                                         state.date = state.date.addingTimeInterval(-15.minutes.timeInterval) }
                                     label: { Image(systemName: "minus.circle") }.tint(.blue).buttonStyle(.borderless)
 
@@ -239,8 +248,8 @@ extension Treatments {
                                             }
                                         }
                                     Button {
-                                        let impactMedium = UIImpactFeedbackGenerator(style: .medium)
-                                        impactMedium.impactOccurred()
+                                        let impactLight= UIImpactFeedbackGenerator(style: .light)
+                                        impactLight.impactOccurred()
                                         state.date = state.date.addingTimeInterval(15.minutes.timeInterval)
                                     }
                                     label: { Image(systemName: "plus.circle") }.tint(.blue).buttonStyle(.borderless)
