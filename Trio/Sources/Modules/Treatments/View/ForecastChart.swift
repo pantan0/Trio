@@ -43,9 +43,6 @@ struct ForecastChart: View {
     var body: some View {
         VStack {
             forecastChartLabels
-                .padding(.bottom, 8)
-
-            forecastChart
         }
     }
 
