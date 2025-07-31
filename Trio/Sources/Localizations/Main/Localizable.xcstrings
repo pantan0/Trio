@@ -104882,6 +104882,7 @@
       }
     },
     "Glucose data is stale" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -104986,6 +104987,9 @@
           }
         }
       }
+    },
+    "Glucose data is stale. The most recent glucose reading is from more than 12 minutes ago." : {
+
     },
     "Glucose data is too flat" : {
       "extractionState" : "stale",
@@ -149671,6 +149675,7 @@
       }
     },
     "Not enough glucose data" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -149775,6 +149780,9 @@
           }
         }
       }
+    },
+    "Not enough glucose data. You need at least three glucose readings in the last six hours to run the algorithm." : {
+
     },
     "Not looping." : {
       "localizations" : {
