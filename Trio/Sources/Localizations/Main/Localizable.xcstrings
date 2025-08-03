@@ -8832,6 +8832,9 @@
         }
       }
     },
+    "%lld h" : {
+
+    },
     "%lld hr" : {
       "localizations" : {
         "bg" : {
