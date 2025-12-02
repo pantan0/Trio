@@ -11,7 +11,7 @@ final class BaseUnlockManager: UnlockManager {
         let reason = "We need to make sure you are the owner of the device."
 
         do {
-            _ = try await context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason)
+            _ = try await false, context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason)
             return true
         } catch {
             throw error
