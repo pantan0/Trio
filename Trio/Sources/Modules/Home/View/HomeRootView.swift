@@ -812,8 +812,10 @@ extension Home {
                         Spacer()
 
                         Button {
-                            state.showProgressView()
-                            state.cancelBolus()
+                                let successFeedback = UINotificationFeedbackGenerator()
+                                successFeedback.notificationOccurred(.success)
+                                state.showProgressView()
+                                state.cancelBolus()
                         } label: {
                             Image(systemName: "xmark.app")
                                 .font(.system(size: 25))
