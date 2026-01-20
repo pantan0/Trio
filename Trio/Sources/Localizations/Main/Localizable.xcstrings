@@ -67790,6 +67790,12 @@
         }
       }
     },
+    "Color" : {
+
+    },
+    "Color Mode" : {
+
+    },
     "Color Scheme Preference" : {
       "localizations" : {
         "bg" : {
@@ -161943,6 +161949,9 @@
         }
       }
     },
+    "Monochrome" : {
+
+    },
     "Month" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -212976,6 +212985,9 @@
           }
         }
       }
+    },
+    "SMBs Off%@" : {
+
     },
     "Smooth CGM readings using Savitzky-Golay filtering." : {
       "localizations" : {
