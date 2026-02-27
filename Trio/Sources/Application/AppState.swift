@@ -7,7 +7,7 @@ import UIKit
     func trioBackgroundColor(for colorScheme: ColorScheme) -> LinearGradient {
         colorScheme == .dark
             ? LinearGradient(
-                gradient: Gradient(colors: [Color.bgDarkBlue, Color.bgDarkerDarkBlue]),
+                gradient: Gradient(colors: [Color.bgDarkerDarkBlue, Color.bgDarkerDarkBlue]),
                 startPoint: .top,
                 endPoint: .bottom
             )
