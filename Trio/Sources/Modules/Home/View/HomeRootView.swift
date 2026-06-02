@@ -22,6 +22,7 @@ extension Home {
         @State var state = StateModel()
 
         @State var settingsPath = NavigationPath()
+        @State var settingsSearchHighlight = SettingsSearchHighlight()
         @State var isStatusPopupPresented = false
         @State var showCancelAlert = false
         @State var showCancelConfirmDialog = false
@@ -995,6 +996,7 @@ extension Home {
             // PUMP RELATED
             .confirmationDialog("Pump Model", isPresented: $showPumpSelection) {
                 Button("Medtronic") { state.addPump(.minimed) }
+                Button("All Omnipod Types") { state.addPump(.omni) }
                 Button("Omnipod Eros") { state.addPump(.omnipod) }
                 Button("Omnipod DASH") { state.addPump(.omnipodBLE) }
                 Button("Dana(RS/-i)") { state.addPump(.dana) }
@@ -1099,6 +1101,7 @@ extension Home {
 
                     NavigationStack(path: self.$settingsPath) {
                         Settings.RootView(resolver: resolver) }
+                        .environment(settingsSearchHighlight)
                         .tabItem { Label(
                             "Settings",
                             systemImage: "gear"
